@@ -24,9 +24,21 @@
 pip install spring-initializer
 ```
 
+更新使用以下命令：
+
+```
+pip install --upgrade spring-initializer
+```
+
 # 使用
 
-可以通过以下命令下载和生成框架代码：
+通过 Python 模块方式运行：
+
+```
+python -m spring_initializer
+```
+
+更推荐以短命令方式运行：
 
 ```
 pysi
@@ -40,6 +52,10 @@ pysi
 pysi -h
 ```
 
+# 运行环境
+
+原则上本工具支持多平台，但并未在 Linux/Mac OS 中经过充分验证。
+
 # 问题反馈
 
 可以给我发邮件：icexmoon@qq.com
@@ -47,6 +63,14 @@ pysi -h
 或者通过 github：[Issues · icexmoon/spring-initializer](https://github.com/icexmoon/spring-initializer/issues)
 
 # 更新记录
+
+## 1.0.2
+
+修复使用短命令时程序会执行两次的 bug
+
+## 1.0.1
+
+增加 Readme 说明
 
 ## 1.0.0
 

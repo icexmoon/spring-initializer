@@ -24,14 +24,14 @@ def main():
                 "type=",
                 "packging=",
                 "dependencies=",
-                "keepZip"
+                "keepZip",
             ],
         )
     except getopt.GetoptError as e:
         print("获取参数信息出错，错误提示：", e.msg)
         exit()
     mainProcess = Main()
-    params:dict = {}
+    params: dict = {}
     if len(opts) == 0:
         mainProcess.generate_spring_project()
         return
@@ -39,26 +39,27 @@ def main():
         for opt in opts:
             argKey = opt[0]
             argVal = opt[1]
-            if argKey == '--help' or argKey == '-h':
+            if argKey == "--help" or argKey == "-h":
                 mainProcess.printHelp()
                 return
-            elif argKey == '--version' or argKey == '-v':
+            elif argKey == "--version" or argKey == "-v":
                 mainProcess.printVersion()
                 return
-            elif argKey == '--dir' or argKey == '-d':
-                params['dirName'] = argVal
-            elif argKey == '--java' or argKey == '-j':
-                params['javaVersion'] = argVal
-            elif argKey == '--type' or argKey == '-t':
-                params['type'] = argVal
-            elif argKey == '--packging' or argKey == '-p':
-                params['packging'] = argVal
-            elif argKey == '--dependencies' or argKey == '-e':
-                params['dependencies'] = argVal
-            elif argKey == '--keepZip' or argKey == '-k':
-                params['removeZip'] = False
+            elif argKey == "--dir" or argKey == "-d":
+                params["dirName"] = argVal
+            elif argKey == "--java" or argKey == "-j":
+                params["javaVersion"] = argVal
+            elif argKey == "--type" or argKey == "-t":
+                params["type"] = argVal
+            elif argKey == "--packging" or argKey == "-p":
+                params["packging"] = argVal
+            elif argKey == "--dependencies" or argKey == "-e":
+                params["dependencies"] = argVal
+            elif argKey == "--keepZip" or argKey == "-k":
+                params["removeZip"] = False
         mainProcess.generate_spring_project(**params)
-        exit()
+        return
 
-main()
-            
+
+if __name__ == "__main__":
+    main()
