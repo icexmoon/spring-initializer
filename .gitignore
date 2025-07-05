@@ -1,0 +1,6 @@
+!tests/test.py
+tests/
+dist/
+*.zip
+src/spring_initializer/__pycache__/
+src/spring_initializer.egg-info/
