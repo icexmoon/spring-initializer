@@ -4,5 +4,6 @@
 --java      -j 指定 java 版本（默认21）
 --tyhpe     -t 指定项目类型（maven-project/gradle-project，默认maven）
 --packging  -p 打包方式，（jar/war，默认jar）
---dependencies -e 项目依赖（默认 spring-web, lombok）
+--dependencies -D 项目依赖（默认 spring-web, lombok）
 --keepZip   -k 保留从官网下载的压缩包（默认不保留）
+--packageName -P 项目包名（默认 com.example.demo）

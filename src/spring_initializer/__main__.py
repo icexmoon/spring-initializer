@@ -15,7 +15,7 @@ def main():
     try:
         opts, args = getopt.gnu_getopt(
             sys.argv[1:],
-            "hvd:j:t:p:e:k",
+            "hvd:j:t:p:D:k:P",
             [
                 "help",
                 "version",
@@ -25,6 +25,7 @@ def main():
                 "packging=",
                 "dependencies=",
                 "keepZip",
+                "packageName"
             ],
         )
     except getopt.GetoptError as e:
@@ -53,10 +54,14 @@ def main():
                 params["type"] = argVal
             elif argKey == "--packging" or argKey == "-p":
                 params["packging"] = argVal
-            elif argKey == "--dependencies" or argKey == "-e":
+            elif argKey == "--dependencies" or argKey == "-D":
                 params["dependencies"] = argVal
             elif argKey == "--keepZip" or argKey == "-k":
                 params["removeZip"] = False
+            elif argKey == "--packageName" or argKey == "-P":
+                params["packageName"] = argVal
+            else:
+                pass
         mainProcess.generate_spring_project(**params)
         return
 

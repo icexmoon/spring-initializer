@@ -72,7 +72,8 @@ class Main():
         type: str = "maven-project",
         packging: str = "jar",
         dependencies: str = "web,lombok",
-        removeZip: bool = True
+        removeZip: bool = True,
+        packageName: str = "com.example.demo"
     ):
         """生成并下载Spring项目"""
         # Spring Initializr API参数
@@ -85,7 +86,7 @@ class Main():
             "artifactId": "demo",
             "name": "demo",
             "description": "Spring Boot Demo",
-            "packageName": "com.example.demo",
+            "packageName": packageName,
             "packaging": packging,
             "version": "0.0.1-SNAPSHOT",
             "dependencies": dependencies,
